@@ -1,0 +1,36 @@
+--------------
+Protocols
+--------------
+
+*A protocol is used to declare methods and properties that are independent of any specific class.
+*A protocol is a group of related properties and methods that can be implemented by any class.
+*They are more flexible than a normal class interface, since they let you reuse a single API declaration in completely unrelated classes.
+*This makes it possible to represent horizontal relationships on top of an existing class hierarchy.
+
+
+The basic syntax to define a protocol looks like this:
+@protocol ProtocolName
+// list of methods and properties
+@end
+
+-----------
+Subclasses 
+-----------
+
+*A subclass inherits methods and instance variables from its superclass.
+*The NSObject class is divided into smaller groups of objects, called subclasses.
+*Every object class inherits from the superclasses above it in the object hierarchy, and also declares the methods which make it a unique class.
+*Objects in these subclasses not only conform to the protocol of NSObject, they are also defined more precisely by the methods that govern their subclass.
+
+
+If a class called classname and to have a subclass called subclassname,declare it :
+@interface subclassname : classname {
+// instance variables that subclassname has but classname lacks go here
+}
+// methods that subclassname has and classname may or may not go here. If both have it, subclassname's implementation override's classname's so long as an instance of subclassname is references.
+@end
+
+*A subclass can override a method it inherits from the class it is based on.
+*The class it is based on is called its superclass. If subclassname overrides a method named methodname it inherits from classname :
+[super methodname];
+
